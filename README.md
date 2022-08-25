@@ -1,89 +1,526 @@
 <h1 align="center">Cab Service<br>Mini Project using Python CLI</h1>
 
 ### Indroduction 
-<p align="justify"> Create a website that displays Tourist information about Sri Lanka. This must contain all the well- known tourist places. It can be named “Pearl of the Indian Ocean” and it should contain an appropriate theme. Users could be able to browse Province/District wise information as well; it would be appreciated if you add other details like general information of SL and contact details of the service providers, etc.</p>
-  
-<p align="justify">The page should contain at least 5 distinct web pages, should have a captivating look, and be interactive. Some suggestions for pages are Home, about us, separate pages for tourist information, queries, To-Do List and Contact Us.<p>
-  
-  
-### Guidelines
-  1. You are free to decide on suitable pages, images, and their components as long as the basic requirements of the website are met.
-  2. Create a To-Do list using VueJs where users can enter their preferences (i.e: they can enter the list of the places where they planned to visit.), 
-  once they complete it, the list should display separately by the side of the same page.
-  3. Usages of Templates are prohibited. Make sure to avoid irrelevant components/information.
-  4. You are advised to use CSS, JavaScript, and VueJs framework to improve the look and feel of the website.
-  5. Backend functionality is NOT expected to be implemented.
-  6. E-commerce integration is NOT expected.
-  7. Marks will be distributed for the correct usage of HTML, CSS, JavaScript, and VueJs
+<p align="justify">My Project is about design and implement a program for a cab service. The requirements as follows. Cab service has 5 types of vehicles. Cars, Vans, 3 Wheelers, Lorries. Trucks.</p>
+
+*Details of each vehicle as follows.*
+- Car:Maximum number of passengers - 3 and 4 AC/ Non AC
+- Van:Maximum number of passengers - 6 and 8
+AC/ Non AC
+- 3 Wheelers:Maximum number of passengers - 3
+- Trucks:Size – 7 ft and 12 ft
+- Lorry:Max load and size - 2500kg and 3500kg
+
+<p align="justify">Customer can be able to choose a vehicle according to his/ her requirements. Vehicles should be in a queue and the next available vehicle must be given, which matches the customer requirements.</p>
+
+*Following features have to be in the program,*
+- Add a new vehicle to the system
+- Remove a vehicle from the system
+- Assign a job (hire)
+- Release form assigned job (hire) after completing
+- See available vehicles in each category. 
 
   
-### This Documentation Includes
-  1. Frontpage (with your basic details)
-  2. Problem(s) – sub-problems, constraints
-  3. Solution Approach - How you plan to solve the identified sub-problems
-  4. Architectural diagram of the system
-  5. Site Map
-  6. Used web technologies and examples
-  7. Test Results (test cases with screenshots and descriptions)
-  8. Conclusion
   
-  
-### Description 
-<p align="justify"> My webpage is for tourists who visits Sri Lanka. This webpage provides the best places in a particular Provinces in Sri Lanka. I have also included HTML, CSS, Java script and Vue Js to make this website. Clients can also note the places they wish to visit in the upcoming days. This can be done in a To-Do Section, and I have used Vue Js framework to do it. And I’m sure that I didn’t used any templates, etc. It’s my own creation.I have added a video for the home background to make the website look realistic. I have added the images for the best places that are in a particular province I have also added videos in the end of each page to beautify web page. know more about those best places. I have also added a Query using Java script which can be useful for the tourists to ask any help and send feedback. About Us and Contact Us gives the information about the website and a way to contact them respectively.</p>
-  
-### Problems 
-<p align="justify"> In case I was faced many problems. I have not learned about Vue Js at the time the mini project was given. It was hard to study Vue Js in that short time and complete the website. We have been given a Vue Js tutorial link in our LMS page, but it was hard to understand that tutorial because of lack of explanation. Since it is my first website it was hard to design the website.</p>
-  
-### Constraints
-<p align="justify"> Minimum number of computers is at least 2 which will limit the development process if they are not available. Since Atom Code Editor provides rich web-based interactions, resolution of screen and graphics aspects of hardware are extremely important. Installations of Atom, Microsoft visual studio code are essentials which enable the developer to develop their application.</p>
-  
-### Solution Approach
-I had a workshop at the final time in Vue Js. That workshop was so helpful to complete our mini project. So, I again watched the recorded video and I learned more.
-- W3Schools, YouTube, Google resources are very useful thing when I got problems. it’s a good
-solution provider also.
-- I have looked through some of the YouTube videos on how to make a webpage. Those YouTube videos helped me complete this mini project.
-- I had an extra class by our tutor Sajitha Madam explaining Vue Js. Those explanations were also helped me using VueJs.
-- And finally, I was created To-Do list with VueJs Framework.
-  
-### Architectural diagram of the system
-<img src="https://user-images.githubusercontent.com/90142607/186638458-1962dbd2-aa55-48ba-90b0-b252bc9dedb5.png" align="center"/>
+### Flow Chart of Program
+![FlowC](https://user-images.githubusercontent.com/90142607/186675080-1f8f1319-8eed-4000-80fe-9e606d955d1f.jpg)
 
-### Site Map
- <img src="https://user-images.githubusercontent.com/90142607/186638475-b77f3633-f163-4c9e-b2b3-b09d9b072f93.jpg" align="center"/>
+### Source Code
+ # Arrays
+AC_Cars = ["ACC1-HONDA", "ACC2-AUDI", "ACC3-HYUNDAI", "ACC4-BMW"]
+NonAC_Cars = ["NACC1-SUZUKI", "NACC2-SUZUKI", "NACC3-TATA"]
+AC_Vans = ["ACV1-TOYOTA", "ACV2-TOYOTA", "ACV3-BENZ"]
+NonAC_Vans = ["NACV1-TOYOTA", "NACV2-LANCER"]
+ThreeWheels = ["TW1-BAJAJ", "TW2-BAJAJ", "TW3-BAJAJ", "TW4-BAJAJ"]
+Trucks = ["TRK1-TATA", "TRK2-MITSUBISHI"]
+Lorries = ["LRY1-TATA", "LRY2-MITSUBISHI"]
+Hired_Vehicles = ["LRY3-TATA", "NACC4-BMW"]
 
-### Used Web Technologies and examples
-*I have used only front-end web technologies like,*
-- HTML                        
-- CSS                 
-- VueJS Framework
-- JavaScript
-- JQuery
-- CDN for JavaScript, VueJS, CSS
-- Google Chrome Browser     
-- Atom Code Editor    
-- Microsoft Visual Studio Code
-- Video Editing Softwares
-  
-### Test Results
-*Home Page:*![Screenshot 2022-01-14 044519](https://user-images.githubusercontent.com/90142607/186636537-a3fb0c7e-9c22-42f3-8396-45cb0372ee93.png)
+# Global Functions
+def msgReleaseSuccess():
+    print(">>>>Vehicle Released Successfully<<<<")
 
-*Browse Places Page:*![Screenshot 2022-01-14 044544](https://user-images.githubusercontent.com/90142607/186636619-ce32aea3-481f-417c-8106-b123c91d1f10.png)
+def msgHireSuccess():
+    print(">>>>Vehicle Hired Successfully<<<<")
 
-*Browse Places Page (Scrolled):*![Screenshot 2022-01-14 044557](https://user-images.githubusercontent.com/90142607/186636636-80780beb-ccdb-45cf-9efa-aa5c4e3b7309.png)
+def msgRemoveSuccess():
+    print(">>>>Vehicle Removed Successfully<<<<")
 
-*To-Do List App(with VueJS):*![Screenshot 2022-01-14 044640](https://user-images.githubusercontent.com/90142607/186636670-3c47756d-1789-458c-9d50-1b000c724f43.png)
+def msgAddSuccess():
+    print(">>>>Vehicle Added Successfully<<<<")
 
-*Contact Us Page :*![Screenshot 2022-01-14 044702](https://user-images.githubusercontent.com/90142607/186636688-92971806-a40d-4e94-887a-3cf2f74f5b0c.png)
+def back():
+    x = input('''====================================
+Enter (x) to Back : ''')
+    if x == "x":
+        print(mainMenuPage())
+    else:
+        print("Invalid Input!!!")
 
-*About Us Page :*![Screenshot 2022-01-14 044740](https://user-images.githubusercontent.com/90142607/186636706-75c0a257-63a8-4748-88db-26cd55366f87.png)
+def back1():
+    x = input('''====================================
+Enter (x) to Back : ''')
+    if x == "x":
+        print(availableVehiclesPage())
+    else:
+        print("Invalid Input!!!")
 
-*About Us Page (Scrolled):*![Screenshot 2022-01-14 044758](https://user-images.githubusercontent.com/90142607/186636749-034e3787-9ad1-4789-92f0-8f7919a860dc.png)
+def back2():
+    x = input("Enter (x) to Back : ")
+    if x == "x":
+        print(addVehiclesPage())
+    else:
+        print("Invalid Input!!!")
 
-*I have also attached Demo Testing Video inside the Drive Folder which is*
-https://drive.google.com/drive/folders/16mdAzyPQtDAqHPqTJbgEPDyMA2JMoOap?usp=sharing
+def back3():
+    x = input("Enter (x) to Back : ")
+    if x == "x":
+        print(removeVehiclesPage())
+    else:
+        print("Invalid Input!!!")
 
-### Conclusion
-<p align="justify">The purpose and objective of Pearl of the Indian Ocean project is achieved. By providing extremely rich graphical user interface, web page designing is easy and in an aesthetic form. Flexibility in designing makes user explore their imagination and thus, even a novice user can dream and accomplish their wish of web page designing.</p>
+def back4():
+    x = input("Enter (x) to Back : ")
+    if x == "x":
+        print(hireVehiclesPage())
+    else:
+        print("Invalid Input!!!")
+
+# Option 7 Hired Vehicles List
+def seeHiredVehiclesPage():
+    print("==================================")
+    print("        Hired Vehicles List       ")
+    print("==================================")
+    for h in Hired_Vehicles:
+        print(h)
+    print(back())
+
+# Option 6 Release Hired Vehicles
+def releaseHiredPage():
+    print("=============================================")
+    print("        *** Release Hired Vehicles ***       ")
+    print("=============================================")
+    print("=============================================")
+    print("              Hired Vehicles List            ")
+    print("=============================================")
+    for h in Hired_Vehicles:
+        print(h)
+    print("=============================================")
+
+    print("Enter (x) 2 Times to Back Menu")
+    name = input('Enter Vehicle Name from List to Release: ')
+    print("(1) Release " +name+ " to AC Cars")
+    print("(2) Release " +name+ " to Non-AC Cars")
+    print("(3) Release " +name+ " to AC Vans")
+    print("(4) Release " +name+ " to Non-AC Vans")
+    print("(5) Release " +name+ " to Three Wheels")
+    print("(6) Release " +name+ " to Trucks")
+    print("(7) Release " +name+ " to Lorries")
+    print("=============================================")
+    av = input('Enter a Choice: ')
+    if av == "1":
+        AC_Cars.append(name)
+        Hired_Vehicles.remove(name)
+        print(msgReleaseSuccess())
+        print(back4())
+    elif av == "2":
+        NonAC_Cars.append(name)
+        Hired_Vehicles.remove(name)
+        print(msgReleaseSuccess())
+        print(back4())
+    elif av == "3":
+        AC_Vans.append(name)
+        Hired_Vehicles.remove(name)
+        print(msgReleaseSuccess())
+        print(back4())
+    elif av == "4":
+        NonAC_Vans.append(name)
+        Hired_Vehicles.remove(name)
+        print(msgReleaseSuccess())
+        print(back4())
+    elif av == "5":
+        ThreeWheels.append(name)
+        Hired_Vehicles.remove(name)
+        print(msgReleaseSuccess())
+        print(back4())
+    elif av == "6":
+        Trucks.append(name)
+        Hired_Vehicles.remove(name)
+        print(msgReleaseSuccess())
+        print(back4())
+    elif av == "7":
+        Lorries.append(name)
+        Hired_Vehicles.remove(name)
+        print(msgReleaseSuccess())
+        print(back4())
+    elif av == "x":
+        print(mainMenuPage())
+    else:
+        print("Invalid Input!!!")
+        print(releaseHiredPage())
+
+
+# Option 5 Hire Vehicles
+def hireVehiclesPage():
+    print("===========================")
+    print("       Hire a Vehicle      ")
+    print("===========================")
+    print("(1) AC Cars")
+    print("(2) Non-AC Cars")
+    print("(3) AC Vans")
+    print("(4) Non-AC Vans")
+    print("(5) Three Wheels")
+    print("(6) Trucks")
+    print("(7) Lorries")
+    print("===========================")
+    print("(x) Back to Menu")
+    av = input('Enter a Choice: ')
+    if av == "1":
+        for e in AC_Cars:
+            print(e)
+        a = str(input("Enter Car Name from List to Hire: "))
+        AC_Cars.remove(a)
+        Hired_Vehicles.append(a)
+        print(msgHireSuccess())
+        print(back4())
+    elif av == "2":
+        for e in NonAC_Cars:
+            print(e)
+        a = str(input("Enter Car Name from List to Hire: "))
+        NonAC_Cars.remove(a)
+        Hired_Vehicles.append(a)
+        print(msgHireSuccess())
+        print(back4())
+    elif av == "3":
+        for e in AC_Vans:
+            print(e)
+        a = str(input("Enter Van Name from List to Hire: "))
+        AC_Vans.remove(a)
+        Hired_Vehicles.append(a)
+        print(msgHireSuccess())
+        print(back4())
+    elif av == "4":
+        for e in NonAC_Vans:
+            print(e)
+        a = str(input("Enter Van Name from List to Hire: "))
+        NonAC_Vans.remove(a)
+        Hired_Vehicles.append(a)
+        print(msgHireSuccess())
+        print(back4())
+    elif av == "5":
+        for e in ThreeWheels:
+            print(e)
+        a = str(input("Enter Three Wheel Name from List to Hire: "))
+        ThreeWheels.remove(a)
+        Hired_Vehicles.append(a)
+        print(msgHireSuccess())
+        print(back4())
+    elif av == "6":
+        for e in Trucks:
+            print(e)
+        a = str(input("Enter Truck Name from List to Hire: "))
+        Trucks.remove(a)
+        Hired_Vehicles.append(a)
+        print(msgHireSuccess())
+        print(back4())
+    elif av == "7":
+        for e in Lorries:
+            print(e)
+        a = str(input("Enter Lorry Name from List to Hire: "))
+        Lorries.remove(a)
+        Hired_Vehicles.append(a)
+        print(msgHireSuccess())
+        print(back4())
+    elif av == "x":
+        print(mainMenuPage())
+    else:
+        print("Invalid Input!!!")
+        print(hireVehiclesPage())
+
+
+# Option 4 Remove Vehicles
+def removeVehiclesPage():
+    print("===========================")
+    print("      Remove Vehicles      ")
+    print("===========================")
+    print("(1) AC Cars")
+    print("(2) Non-AC Cars")
+    print("(3) AC Vans")
+    print("(4) Non-AC Vans")
+    print("(5) Three Wheels")
+    print("(6) Trucks")
+    print("(7) Lorries")
+    print("===========================")
+    print("(x) Back to Menu")
+    av = input('Enter a Choice: ')
+    if av == "1":
+        for e in AC_Cars:
+            print(e)
+        a = str(input("Enter Car Name from List to Remove: "))
+        AC_Cars.remove(a)
+        print(msgRemoveSuccess())
+        for e in AC_Cars:
+            print(e)
+        print(back3())
+    elif av == "2":
+        for e in NonAC_Cars:
+            print(e)
+        a = str(input("Enter Car Name from List to Remove: "))
+        NonAC_Cars.remove(a)
+        print(msgRemoveSuccess())
+        for e in NonAC_Cars:
+            print(e)
+        print(back3())
+    elif av == "3":
+        for e in AC_Vans:
+            print(e)
+        a = str(input("Enter Van Name from List to Remove: "))
+        AC_Vans.remove(a)
+        print(msgRemoveSuccess())
+        for e in AC_Vans:
+            print(e)
+        print(back3())
+    elif av == "4":
+        for e in NonAC_Vans:
+            print(e)
+        a = str(input("Enter Van Name from List to Remove: "))
+        NonAC_Vans.remove(a)
+        print(msgRemoveSuccess())
+        for e in NonAC_Vans:
+            print(e)
+        print(back3())
+    elif av == "5":
+        for e in ThreeWheels:
+            print(e)
+        a = str(input("Enter Three Wheel Name from List to Remove: "))
+        ThreeWheels.remove(a)
+        print(msgRemoveSuccess())
+        for e in ThreeWheels:
+            print(e)
+        print(back3())
+    elif av == "6":
+        for e in Trucks:
+            print(e)
+        a = str(input("Enter Truck Name from List to Remove: "))
+        Trucks.remove(a)
+        print(msgRemoveSuccess())
+        for e in Trucks:
+            print(e)
+        print(back3())
+    elif av == "7":
+        for e in Lorries:
+            print(e)
+        a = str(input("Enter Lorry Name from List to Remove: "))
+        Lorries.remove(a)
+        print(msgRemoveSuccess())
+        for e in Lorries:
+            print(e)
+        print(back3())
+    elif av == "x":
+        print(mainMenuPage())
+    else:
+        print("Invalid Input!!!")
+        print(addVehiclesPage())
+
+
+# Option 3 Add Vehicles
+def addVehiclesPage():
+    print("===========================")
+    print("      Add New Vehicles     ")
+    print("===========================")
+    print("(1) AC Cars")
+    print("(2) Non-AC Cars")
+    print("(3) AC Vans")
+    print("(4) Non-AC Vans")
+    print("(5) Three Wheels")
+    print("(6) Trucks")
+    print("(7) Lorries")
+    print("===========================")
+    print("(x) Back to Menu")
+    av = input('Enter a Choice: ')
+    if av == "1":
+        a = str(input("Enter New AC Car Name: "))
+        AC_Cars.append(a)
+        print(msgAddSuccess())
+        for e in AC_Cars:
+            print(e)
+        print(back2())
+    elif av == "2":
+        a = str(input("Enter New Non-AC Car Name: "))
+        NonAC_Cars.append(a)
+        print(msgAddSuccess())
+        for e in NonAC_Cars:
+            print(e)
+        print(back2())
+    elif av == "3":
+        a = str(input("Enter New AC Van Name: "))
+        AC_Vans.append(a)
+        print(msgAddSuccess())
+        for e in AC_Vans:
+            print(e)
+        print(back2())
+    elif av == "4":
+        a = str(input("Enter New Non-AC Van Name: "))
+        NonAC_Vans.append(a)
+        print(msgAddSuccess())
+        for e in NonAC_Vans:
+            print(e)
+        print(back2())
+    elif av == "5":
+        a = str(input("Enter New Three Wheel Name: "))
+        ThreeWheels.append(a)
+        print(msgAddSuccess())
+        for e in ThreeWheels:
+            print(e)
+        print(back2())
+    elif av == "6":
+        a = str(input("Enter New Truck Name: "))
+        Trucks.append(a)
+        print(msgAddSuccess())
+        for e in Trucks:
+            print(e)
+        print(back2())
+    elif av == "7":
+        a = str(input("Enter New Lorry Name: "))
+        Lorries.append(a)
+        print(msgAddSuccess())
+        for e in Lorries:
+            print(e)
+        print(back2())
+    elif av == "x":
+        print(mainMenuPage())
+    else:
+        print("Invalid Input!!!")
+        print(addVehiclesPage())
+
+
+# Option 2 See Available Vehicles
+def availableVehiclesPage():
+    print("===========================")
+    print("     Available Vehicles    ")
+    print("===========================")
+    print("(1) AC Cars")
+    print("(2) Non-AC Cars")
+    print("(3) AC Vans")
+    print("(4) Non-AC Vans")
+    print("(5) Three Wheels")
+    print("(6) Trucks")
+    print("(7) Lorries")
+    print("===========================")
+    print("(x) Back to Menu")
+    av = input('Enter a Choice: ')
+    if av == "1":
+        print("====================================")
+        print("       AVAILABLE AC CARS LIST       ")
+        print("====================================")
+        for acc in AC_Cars:
+            print(acc + " AC Car")
+        print(back1())
+    elif av == "2":
+        print("====================================")
+        print("     AVAILABLE NON-AC CARS LIST     ")
+        print("====================================")
+        for nacc in NonAC_Cars:
+            print(nacc + " Non-AC Car")
+        print(back1())
+    elif av == "3":
+        print("====================================")
+        print("       AVAILABLE AC VANS LIST       ")
+        print("====================================")
+        for acv in AC_Vans:
+            print(acv + " AC Van")
+        print(back1())
+    elif av == "4":
+        print("====================================")
+        print("     AVAILABLE NON-AC VANS LIST     ")
+        print("====================================")
+        for nacv in NonAC_Vans:
+            print(nacv + " Non-AC Van")
+        print(back1())
+    elif av == "5":
+        print("====================================")
+        print("    AVAILABLE THREE WHEELS LIST     ")
+        print("====================================")
+        for twee in ThreeWheels:
+            print(twee + " Three Wheel")
+        print(back1())
+    elif av == "6":
+        print("====================================")
+        print("       AVAILABLE TRUCKS LIST        ")
+        print("====================================")
+        for tru in Trucks:
+            print(tru + " Truck")
+        print(back1())
+    elif av == "7":
+        print("====================================")
+        print("       AVAILABLE LORRIES LIST       ")
+        print("====================================")
+        for lor in Lorries:
+            print(lor + " Lorry")
+        print(back1())
+    elif av == "x":
+        print(mainMenuPage())
+    else:
+        print("Invalid Input!!!")
+        print(availableVehiclesPage())
+
+
+# Option 1 Vehicles Details
+def detailsOfVehiclesPage():
+    print("==================================================")
+    print("                Vehicles Details                  ")
+    print("==================================================")
+    print("✔ Car | Passengers: 3 and 4 | Type: AC/ Non AC")
+    print("✔ Van | Passengers: 6 and 8 | Type: AC/ Non AC")
+    print("✔ Three Wheel | Passengers: 3")
+    print("✔ Trucks | Size: 7 ft and 12 ft")
+    print("✔ Lorry | Max Load - 2500kg and 3500kg")
+    print("==================================================")
+    print("Enter (x) to Go to Main Page:")
+    e = input()
+    if e == "x":
+        print(mainMenuPage())
+    else:
+        print("Invalid Input!!!")
+        print(detailsOfVehiclesPage())
+
+
+# Main Page
+def mainMenuPage():
+    print("************************************")
+    print("       Welcome to Cab Service       ")
+    print("           BY M.T.M. ZAKIR          ")
+    print("************************************")
+    print("Choice 1 - Vehicles Details")
+    print("Choice 2 - See Available Vehicles")
+    print("Choice 3 - Add Vehicles")
+    print("Choice 4 - Remove Vehicles")
+    print("Choice 5 - Hire a Vehicle")
+    print("Choice 6 - Release Hired Vehicles")
+    print("Choice 7 - See Hired Vehicles List")
+    print("************************************")
+    x = input('Enter a Choice Number: ')
+    print("************************************")
+    if x == "1":
+        print(detailsOfVehiclesPage())
+    elif x == "2":
+        print(availableVehiclesPage())
+    elif x == "3":
+        print(addVehiclesPage())
+    elif x == "4":
+        print(removeVehiclesPage())
+    elif x == "5":
+        print(hireVehiclesPage())
+    elif x == "6":
+        print(releaseHiredPage())
+    elif x == "7":
+        print(seeHiredVehiclesPage())
+    else:
+        print("Invalid Choice.... Please Try Again")
+
+print(mainMenuPage())
+
+
 
 
 <h1 align="center">Credits to M.T.M. Zakir</h1>
