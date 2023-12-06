@@ -20,10 +20,6 @@ AC/ Non AC
 - Release form assigned job (hire) after completing
 - See available vehicles in each category. 
 
-  
-  
-### Flow Chart of Program
-![FlowC](https://user-images.githubusercontent.com/90142607/186675080-1f8f1319-8eed-4000-80fe-9e606d955d1f.jpg)
 
 ### Source Code
 in Repo
